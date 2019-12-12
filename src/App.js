@@ -10,6 +10,7 @@ function App() {
   useEffect(() => {
       axios
           .get('https://api.nasa.gov/planetary/apod?api_key=BqEDOxHAPDIiQ4XnIyJOPSYBAqE0j1wpbABEWnwu#')
+          //.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
           .then(response => {
               //console.log(response.data);
               setImg(response.data);
