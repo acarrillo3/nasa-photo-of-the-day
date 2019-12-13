@@ -1,6 +1,29 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 //import NasaContainer from "./Components/NasaContainer";
+import styled from "styled-components";
+
+const StyledHeading = styled.h1`
+    color: blue;
+`;
+
+const SitesBack = styled.div`
+    background: #f8f9fa;
+    width: 80%;
+    margin: auto;
+    border: 3px solid green;
+    padding: 10px;
+`;
+
+const ReImg = styled.img`
+    width: 50%;
+    border: 1px dotted white;
+`;
+
+const Paragraph = styled.p`
+    font-size: 1.5rem;
+    padding: 10px;
+`;
 
 export default  function NasaGetData () {
     const [getInfo, setInfo] = useState([]);
@@ -20,16 +43,20 @@ export default  function NasaGetData () {
     useEffect(shouldUpdate, []);
 
     return (
-        <div>
-            <div className="title">
-                <h1>{getInfo.title}</h1>
+        <SitesBack>
+                <StyledHeading>
+                    {getInfo.title}
+                </StyledHeading>
+                
                 <h4>{getInfo.date}</h4>
-                <img alt='img' src={getInfo.hdurl} />
-                <h5>{getInfo.explanation}</h5>
+                <ReImg alt='img' src={getInfo.hdurl} />
+                <Paragraph>
+                {getInfo.explanation}
+                </Paragraph>
                 {/* {getInfo.map(item => {
                 return <NasaContainer key={item} title={title} date={date} hdurl={hdurl} />;
                 })} */}
-            </div>
-        </div>
+        </SitesBack>
+
     )
 }

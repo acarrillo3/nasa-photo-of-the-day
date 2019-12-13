@@ -7,10 +7,10 @@ const NasaContainer = props => {
     }else{*/
         return (
             <div className="container">
-                <h1>{props.title}</h1>
-                <h2>{props.date}</h2>
-                <p>{props.hdurl}</p>
-                <p>{props.explanation}</p>
+                <h1>{props.data.title}</h1>
+                <h2>{props.data.date}</h2>
+                <p>{props.data.hdurl}</p>
+                <p>{props.data.explanation}</p>
             </div>
         )
     }
